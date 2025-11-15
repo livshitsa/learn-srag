@@ -1,0 +1,10 @@
+What is the average price of a standard room across all hotels?
+How many total rooms are available across all properties?
+Which hotel has the highest customer rating?
+What is the total parking capacity across all hotels?
+How many hotels allow pets?
+What is the average distance to the airport?
+Which hotels were built after 2010?
+What is the cheapest room available and at which hotel?
+How many 5-star hotels are in the collection?
+What is the average number of rooms per hotel?

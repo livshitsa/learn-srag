@@ -1,0 +1,10 @@
+What was the total attendance across all matches?
+Which match had the highest number of goals scored?
+How many yellow cards were shown in total?
+What was the average possession percentage for Argentina across all their matches?
+Which stadium hosted the most matches?
+How many matches went to penalties?
+What was the highest attendance at a single match?
+Which team scored the most goals across all matches?
+How many matches were played in November vs December?
+What was the average temperature across all matches?
