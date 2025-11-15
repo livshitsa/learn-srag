@@ -68,6 +68,8 @@ npm run example:worldcup
 npm run example:custom
 ```
 
+**💡 Want to use your own data?** See the **[Data Preparation Guide](docs/data-preparation.md)** for tips on structuring documents and questions for optimal results.
+
 ### Programmatic Usage
 
 ```typescript
@@ -235,8 +237,9 @@ Based on our testing with the hotels and world cup examples:
 
 ## Documentation
 
-- **[Architecture Guide](docs/architecture.md)** - System design and component overview
+- **[Data Preparation Guide](docs/data-preparation.md)** - How to prepare documents and questions for ingestion
 - **[Quickstart Guide](docs/quickstart.md)** - Step-by-step tutorial
+- **[Architecture Guide](docs/architecture.md)** - System design and component overview
 - **[Evaluation Guide](docs/evaluation.md)** - Metrics and benchmarking
 
 ## Examples
