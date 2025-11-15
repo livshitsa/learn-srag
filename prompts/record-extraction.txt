@@ -1,0 +1,64 @@
+You are an expert data extraction system tasked with extracting structured information from a document based on a predefined JSON Schema.
+
+## Task
+
+Extract structured data from the following document according to the provided schema. Read the document carefully and extract the requested information as accurately as possible.
+
+## Document
+
+{document}
+
+## Schema
+
+{schema}
+
+## Extraction Requirements
+
+1. **Follow the Schema**: Extract data for each property defined in the schema
+2. **Type Accuracy**: Ensure each value matches the expected type (string, number, integer, boolean)
+3. **Handle Missing Data**: If information is not available in the document, use `null` for that field
+4. **No Assumptions**: Only extract information explicitly stated in the document - do not infer or guess
+5. **Standardize Values**: When possible, standardize formats:
+   - Numbers: Convert abbreviated forms (e.g., "1M" → 1000000, "5K" → 5000, "2.5B" → 2500000000)
+   - Booleans: Convert text to boolean (e.g., "yes" → true, "no" → false)
+   - Strings: Use the exact text from the document, trimmed of extra whitespace
+
+## Property Details
+
+{property_details}
+
+## Output Format
+
+Return ONLY a valid JSON object with the extracted data. Do not include any explanations, markdown formatting, or additional text.
+
+The output must be a single JSON object with keys matching the schema properties:
+
+{{
+  "property1": "value1",
+  "property2": 123,
+  "property3": true,
+  "property4": null
+}}
+
+## Important Notes
+
+- If a value is not found in the document, use `null`
+- If a value is found but in a different format, standardize it according to the type
+- Do not add properties not defined in the schema
+- Ensure all required properties are present (even if `null`)
+- For numeric values with suffixes (K, M, B), convert to full numbers
+- For boolean-like text (yes/no, true/false), convert to actual booleans
+- Remove currency symbols, commas, and other formatting from numbers
+
+## Example
+
+If the schema asks for "population" (integer) and the document says "Population: 2.5M", extract as:
+{{ "population": 2500000 }}
+
+If the schema asks for "is_active" (boolean) and the document says "Status: Active", extract as:
+{{ "is_active": true }}
+
+If the schema asks for "founded_year" (integer) but it's not mentioned in the document, extract as:
+{{ "founded_year": null }}
+
+Now extract the data from the document above and return ONLY the JSON object.

@@ -1,0 +1,56 @@
+You are an expert data analyst tasked with creating a JSON Schema to extract structured information from unstructured documents.
+
+## Task
+
+Analyze the following sample documents and generate a JSON Schema that captures the most important and recurring concepts across these documents.
+
+## Sample Documents
+
+{documents}
+
+## Requirements
+
+1. **Focus on Recurring Concepts**: Identify information that appears across multiple documents, not just in a single document
+2. **Primitive Types Only**: Use only primitive JSON types:
+   - `string`: for text values
+   - `number`: for decimal/floating-point numbers
+   - `integer`: for whole numbers
+   - `boolean`: for true/false values
+3. **No Nested Objects**: The schema must be flat - no nested objects or arrays
+4. **Include Examples**: Each property must include at least 2-3 example values from the documents
+5. **Include Descriptions**: Each property must have a clear, concise description
+6. **Title and Description**: The schema must have an overall title and description
+
+## Schema Format
+
+Return ONLY a valid JSON Schema in the following format (no additional text):
+
+```json
+{{
+  "title": "Descriptive Title",
+  "description": "Brief description of what this schema represents",
+  "type": "object",
+  "properties": {{
+    "property_name": {{
+      "type": "string|number|integer|boolean",
+      "description": "Clear description of this property",
+      "examples": ["example1", "example2", "example3"]
+    }},
+    ...
+  }},
+  "required": ["property1", "property2", ...]
+}}
+```
+
+## Guidelines
+
+- Extract 5-15 properties (focus on the most important concepts)
+- Property names should be descriptive and use snake_case
+- Avoid overly specific properties that only appear in one document
+- Avoid long text fields - prefer atomic, queryable properties
+- Mark properties as required if they appear in most documents
+- Examples should be realistic values from the actual documents
+
+## Output
+
+Return ONLY the JSON Schema, no explanations or additional text.

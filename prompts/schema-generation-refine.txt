@@ -1,0 +1,94 @@
+You are a data schema expert. Your task is to refine an existing JSON Schema based on sample questions that need to be answered using the structured data.
+
+## Task
+
+You are given:
+1. A current JSON Schema
+2. Sample documents from the corpus
+3. Sample questions that users want to answer
+
+Your goal is to refine the schema to ensure it captures the attributes needed to answer the sample questions while maintaining consistency with the documents.
+
+## Current Schema
+
+{current_schema}
+
+## Sample Documents
+
+{documents}
+
+## Sample Questions
+
+{questions}
+
+## Refinement Guidelines
+
+1. **Analyze the Questions**: For each question, identify what attributes or information would be needed to answer it
+2. **Add Missing Attributes**: If the current schema is missing attributes that would help answer the questions, add them
+3. **Remove Irrelevant Attributes**: If some attributes in the current schema don't appear in the documents or aren't useful for the questions, consider removing them
+4. **Refine Descriptions**: Improve descriptions to be more precise and helpful for query generation
+5. **Update Examples**: Ensure examples are accurate and representative of the data in the documents
+6. **Maintain Types**: Keep the same data types unless there's a clear error
+7. **Keep It Flat**: Continue to use only primitive types - no nested objects or arrays
+
+## Schema Requirements (Must Follow)
+
+1. **Top-level structure:**
+   - Must include "title" (string): A descriptive name for the schema
+   - Must include "description" (string): Brief description of what the schema represents
+   - Must include "type" (string): Must be "object"
+   - Must include "properties" (object): Object containing all attributes
+   - Must include "required" (array): List of required property names
+
+2. **Property requirements:**
+   Each property in "properties" MUST have:
+   - "type" (string): One of: "string", "number", "integer", "boolean"
+   - "description" (string): Clear explanation of what this attribute represents
+   - "examples" (array): At least 2-3 example values from the documents
+
+3. **Type constraints:**
+   - Only use primitive types: "string", "number", "integer", "boolean"
+   - DO NOT use nested objects or arrays
+   - DO NOT use "object" or "array" types for properties
+   - Use "integer" for whole numbers, "number" for decimals
+   - Use "string" for text, dates, and categorical values
+   - Use "boolean" for yes/no or true/false values
+
+4. **Attribute selection:**
+   - Focus on attributes that would help answer the sample questions
+   - Keep attributes that appear in multiple documents
+   - Avoid attributes that are too specific to individual documents
+   - Avoid lengthy text fields (like full descriptions or long narratives)
+   - Include attributes useful for filtering, aggregation, and comparison
+   - Prefer quantifiable attributes (numbers, dates, categories)
+
+## Schema Format
+
+Return ONLY a valid JSON Schema in the following format (no additional text):
+
+```json
+{
+  "title": "Descriptive Title",
+  "description": "Brief description of what this schema represents",
+  "type": "object",
+  "properties": {
+    "property_name": {
+      "type": "string|number|integer|boolean",
+      "description": "Clear description of this property",
+      "examples": ["example1", "example2", "example3"]
+    }
+  },
+  "required": ["property1", "property2"]
+}
+```
+
+## Instructions
+
+1. Review the current schema
+2. Analyze the sample questions to identify what attributes are needed
+3. Check if the documents contain information to populate those attributes
+4. Refine the schema by adding, removing, or modifying properties
+5. Ensure all constraints above are followed
+6. Return ONLY the refined JSON Schema - no additional explanation or commentary
+
+Generate the refined JSON Schema now:
