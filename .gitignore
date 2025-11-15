@@ -63,8 +63,12 @@ output/
 # Keep directory structure but ignore contents
 data/schemas/*
 !data/schemas/.gitkeep
+
+# Allow example datasets but ignore user data
 data/datasets/*
 !data/datasets/.gitkeep
+!data/datasets/hotels/
+!data/datasets/worldcup/
 
 # Vitest
 .vitest/
