@@ -241,6 +241,7 @@ Based on our testing with the hotels and world cup examples:
 - **[Quickstart Guide](docs/quickstart.md)** - Step-by-step tutorial
 - **[Architecture Guide](docs/architecture.md)** - System design and component overview
 - **[Evaluation Guide](docs/evaluation.md)** - Metrics and benchmarking
+- **[Farm Credit Use Cases](docs/use-case-farm-credit.md)** - Detailed applications for agricultural lending (1,256 lines)
 
 ## Examples
 
